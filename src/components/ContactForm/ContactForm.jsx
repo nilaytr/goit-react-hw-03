@@ -1,7 +1,7 @@
-import { Form, Formik, Field } from 'formik';
-import { ErrorMessage } from "formik";
+import { Form, Formik, Field, ErrorMessage } from 'formik';
 import { nanoid } from 'nanoid'
 import * as Yup from "yup";
+import css from './ContactForm.module.css';
 
 const ContactForm = ({ onAdd }) => {
     const initialValues = { name: '', number: '' };
@@ -22,16 +22,18 @@ const ContactForm = ({ onAdd }) => {
 
     return (
         <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={contactSchema}>
-            <Form>
-                <label htmlFor="name">Name</label>
-                <Field type="text" name="name" id="name" />
-                <ErrorMessage name="name" component="span" />
-
-                <label htmlFor="number">Number</label>
-                <Field type="tel" name="number" id="number" />
-                <ErrorMessage name="number" component="span" />
-
-                <button type="submit">Add contact</button>
+            <Form className={css.form}>
+                <div>
+                    <label className={css.formLabel} htmlFor="name">Name</label>
+                    <Field type="text" name="name" id="name" />
+                    <ErrorMessage className={css.formError} name="name" component="span" />
+                </div>
+                <div>
+                    <label className={css.formLabel} htmlFor="number">Number</label>
+                    <Field type="tel" name="number" id="number" />
+                    <ErrorMessage className={css.formError} name="number" component="span" />
+                </div>
+                <button className={css.formBtn} type="submit">Add contact</button>
             </Form>
         </Formik>
     );

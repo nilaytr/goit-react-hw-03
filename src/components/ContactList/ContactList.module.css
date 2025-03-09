@@ -1,0 +1,10 @@
+.contactUl {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: left;
+    align-items: flex-start;
+    margin-top: 30px;
+    padding-left: 0%;
+    gap: 20px;
+}
