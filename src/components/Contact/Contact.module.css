@@ -7,11 +7,12 @@
     gap: 1rem;
     border-radius: 5px;
     border: solid 1px black;
+    padding-top: 10px;
 }
 
 .contactBtn {
     padding: 5px;
-    margin: 10px;
+    margin-bottom: 10px;
     font-size: 15px;
     background-color: lightgrey;
     color: black;
